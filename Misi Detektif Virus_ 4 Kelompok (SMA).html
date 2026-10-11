@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Misi Detektif Virus: 4 Kelompok</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Figtree:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F3F7F6;--ink:#10222B;--mute:#4A6068;--card:#fff;--line:#CFE0DC;--ac:#0F9D8A;--on:#fff;--ok:#1B9E5A;--bad:#D6455D;--gold:#F2B632;--t0:#E8467C;--t1:#0F9D8A;--t2:#C98A00;--t3:#6C5CE7;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0C1A22;--ink:#E6F1EF;--mute:#9DB6B8;--card:#14272F;--line:#27424B;--ac:#4FD8C2;--on:#06201C;--ok:#48C98A;--bad:#FF7A8E;--t0:#FF7BA3;--t1:#4FD8C2;--t2:#F2B632;--t3:#A99BFF}}
+:root[data-theme="dark"]{--bg:#0C1A22;--ink:#E6F1EF;--mute:#9DB6B8;--card:#14272F;--line:#27424B;--ac:#4FD8C2;--on:#06201C;--ok:#48C98A;--bad:#FF7A8E;--t0:#FF7BA3;--t1:#4FD8C2;--t2:#F2B632;--t3:#A99BFF}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.55 Figtree,system-ui,sans-serif}
+main{max-width:820px;margin:0 auto;padding:16px 16px 56px}
+h1,h2,h3{font-family:'Bricolage Grotesque',Georgia,sans-serif;line-height:1.15;margin:0 0 .5em}
+h1{font-size:clamp(2rem,7vw,3.2rem);font-weight:800}h2{font-size:1.6rem;font-weight:800}h3{font-size:1.1rem;font-weight:600}
+p{margin:0 0 1em;max-width:64ch}
+.sb{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:10px}
+.tm{background:var(--card);border:1px solid var(--line);border-top:5px solid var(--c);border-radius:10px;padding:6px 8px;font-size:.88rem}
+.tm.act{outline:3px solid var(--c);outline-offset:1px}
+.tm b{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.tm .n{font:800 1.4rem 'Bricolage Grotesque',sans-serif}
+.tm button{border:1px solid var(--line);background:none;border-radius:6px;width:28px;height:24px;line-height:1;padding:0;margin-left:4px;font-size:.85rem}
+.turn{background:var(--c);color:#fff;border-radius:10px;padding:8px 14px;margin:0 0 18px;font-weight:600;text-shadow:0 1px 2px rgba(0,0,0,.35)}
+.news{border-left:6px solid var(--t0);background:var(--card);padding:14px 16px;border-radius:0 12px 12px 0;margin:0 0 20px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin-bottom:12px}
+button{font:inherit;cursor:pointer;color:inherit}
+button:focus-visible,input:focus-visible{outline:3px solid var(--t3);outline-offset:2px}
+.btn{background:var(--ac);color:var(--on);border:0;border-radius:10px;padding:11px 20px;font-weight:600}
+.opt{display:block;width:100%;text-align:left;background:var(--card);border:2px solid var(--line);border-radius:12px;padding:12px 14px;margin-bottom:10px}
+.opt:hover:not(:disabled){border-color:var(--ac)}
+.opt.ok{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 16%,var(--card))}
+.opt.bad{border-color:var(--bad);background:color-mix(in srgb,var(--bad) 14%,var(--card))}
+.opt.sel{border-color:var(--t3);background:color-mix(in srgb,var(--t3) 14%,var(--card))}
+.opt small{display:block;color:var(--mute);margin-top:4px}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:0 14px}
+.cols .opt{padding:10px 12px;font-size:.95rem}
+.fb{padding:12px 14px;border-radius:12px;background:color-mix(in srgb,var(--ac) 14%,var(--card));margin:12px 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-bottom:16px}
+.hero{background:var(--card);border:2px solid var(--line);border-radius:14px;padding:16px;text-align:left;min-height:130px}
+.hero.open{border-color:var(--ac)}
+.hero b{display:block;font-family:'Bricolage Grotesque',sans-serif;font-size:1.1rem;margin:4px 0}
+.hero small{color:var(--mute);font-size:.95rem}
+.chip{display:inline-block;border:2px solid var(--c);border-radius:99px;padding:2px 12px;margin:0 6px 6px 0;font-size:.9rem}
+.rank{display:flex;align-items:center;gap:12px;background:var(--card);border:1px solid var(--line);border-left:8px solid var(--c);border-radius:10px;padding:10px 14px;margin-bottom:8px}
+.rank .n{font:800 1.6rem 'Bricolage Grotesque',sans-serif;margin-left:auto}
+.mute{color:var(--mute);font-size:.92rem}
+input{font:inherit;width:100%;padding:10px;border-radius:10px;border:2px solid var(--line);background:var(--card);color:var(--ink);margin-bottom:10px}
+@media(max-width:560px){.sb{grid-template-columns:1fr 1fr}.cols{gap:0 8px}.cols .opt{font-size:.88rem;padding:9px}}
+@media(prefers-reduced-motion:no-preference){.pop{animation:p .35s}@keyframes p{from{transform:scale(.97);opacity:.4}}}
+</style>
+</head>
+<body>
+<main id="app"></main>
+<script>
+var T=[],tn=0,S=0,M,O,C,CH,QI,QP;
+var NAMES=['Kasus','Misi 1','Misi 2','Misi 3','Misi 4','Hasil'];
+var pairs=[['HIV','AIDS'],['Virus dengue','Demam berdarah'],['Virus influenza','Flu'],['Hepatitis B','Peradangan hati'],['Poliovirus','Polio'],['TMV','Mosaik pada tembakau']];
+var ro=[4,1,5,0,3,2];
+var H=[['💉','Vaksin','Virus dilemahkan atau dimatikan melatih sistem imun.','Tubuh membentuk antibodi dan sel memori tanpa sakit berat. Contoh: vaksin polio, campak, hepatitis B.'],
+['🧬','Terapi gen','Virus menjadi kurir gen sehat.','Gen penyebab penyakit dibuang dari virus, diganti gen normal, lalu dibawa masuk ke sel pasien.'],
+['🎯','Bakteriofag','Virus yang memangsa bakteri.','Dipelajari sebagai alternatif untuk bakteri kebal antibiotik. Tidak menyerang sel manusia.'],
+['🐛','Insektisida hayati','Baculovirus menyerang ulat hama.','Spesifik pada serangga tertentu sehingga mengurangi pestisida kimia.'],
+['🔬','Riset dan produksi protein','Virus membantu rekayasa genetika.','Dipakai sebagai vektor untuk menghasilkan protein seperti interferon dan meneliti terapi kanker.']];
+var SC=[{q:'Puskesmasmu menerima 12 warga satu RW dengan demam tinggi mendadak, nyeri otot, dan bintik merah. Dua warga trombositnya rendah. Apa langkah pertamamu?',o:[['Menunggu dulu, siapa tahu sembuh sendiri.',0,'Menunda berisiko. Kasus berkelompok perlu respons cepat.'],['Melapor ke dinas kesehatan, memeriksa darah, dan mengedukasi warga.',1,'Tepat. Gejala mengarah ke demam berdarah dengue.'],['Memberi antibiotik untuk semua pasien.',0,'Keliru. Dengue disebabkan virus, antibiotik tidak bekerja pada virus.']]},
+{q:'Dengue terkonfirmasi, ditularkan nyamuk Aedes aegypti. Bagaimana memutus penularan di lingkungan?',o:[['Fogging sekali lalu selesai.',0,'Fogging hanya membunuh nyamuk dewasa, jentik tetap ada.'],['Gerakan 3M Plus bersama warga dan jumantik.',1,'Tepat. Menguras, menutup, dan mendaur ulang menghilangkan sarang nyamuk.'],['Menutup semua sekolah sebulan.',0,'Berlebihan dan tidak menyentuh sumber masalah.']]}];
+var Q=[['Mengapa antibiotik tidak efektif untuk penyakit akibat virus?',['Virus terlalu kecil','Virus tidak punya sel dan metabolisme sendiri','Virus selalu kebal obat','Antibiotik hanya untuk jamur'],1],
+['Vaksin umumnya dibuat dari...',['Virus yang dilemahkan atau dimatikan','Virus hidup yang ganas','Bakteri baik','Serum hewan saja'],0],
+['Bakteriofag adalah virus yang menyerang...',['Sel manusia','Tumbuhan','Bakteri','Jamur'],2],
+['Baculovirus dimanfaatkan sebagai...',['Antibiotik','Insektisida hayati','Pupuk nitrogen','Pengawet makanan'],1],
+['Dalam terapi gen, virus berperan sebagai...',['Penghancur sel sehat','Pengganti vaksin','Pembawa gen sehat ke sel pasien','Sumber energi sel'],2]];
+function $(i){return document.getElementById(i)}
+function add(p){T[tn].s+=p}
+function rot(){tn=(tn+1)%4}
+function adj(i,d){T[i].s+=d;render()}
+function reset(){M={l:null,d:{},m:''};O={};C=0;CH=[null,null,null,null];QI=0;QP=null;tn=0;T.forEach(function(t){t.s=0})}
+function head(){
+var h='<div class="sb">';
+T.forEach(function(t,i){h+='<div class="tm'+(i===tn?' act':'')+'" style="--c:var(--t'+i+')"><b>'+t.n+'</b><span class="n">'+t.s+'</span><span style="float:right"><button aria-label="Kurangi 5 poin '+t.n+'" onclick="adj('+i+',-5)">−</button><button aria-label="Tambah 5 poin '+t.n+'" onclick="adj('+i+',5)">+</button></span></div>'});
+h+='</div><p class="mute" style="margin-bottom:6px">'+NAMES.map(function(n,i){return i===S-1?'<b style="color:var(--ink)">'+n+'</b>':n}).join(' / ')+'</p>';
+return h}
+function turn(txt){return '<div class="turn" style="--c:var(--t'+tn+')">Giliran: '+T[tn].n+(txt?'. '+txt:'')+'</div>'}
+function go(n){S=n;render();window.scrollTo(0,0)}
+function nxt(l,n){return '<p><button class="btn" onclick="go('+n+')">'+l+'</button></p>'}
+function v0(){
+var r='<h1>Misi Detektif Virus</h1><p>Kelas dibagi menjadi 4 kelompok. Tulis nama kelompok, lalu kumpulkan poin sebanyak-banyaknya lewat 4 misi. Guru dapat mengubah skor dengan tombol + dan −.</p>';
+for(var i=0;i<4;i++)r+='<label class="mute" for="n'+i+'">Kelompok '+(i+1)+'</label><input id="n'+i+'" maxlength="18" value="Kelompok '+(i+1)+'" style="border-left:8px solid var(--t'+i+')">';
+return r+'<p><button class="btn" onclick="begin()">Mulai</button></p>'}
+function begin(){T=[];for(var i=0;i<4;i++){var v=$('n'+i).value.trim();T.push({n:v||'Kelompok '+(i+1),s:0})}reset();go(1)}
+function v1(){return '<div class="news"><b>Berita pagi:</b> Warga satu RW mendadak demam. Di kota lain, ilmuwan justru memakai virus untuk melawan penyakit.</div><h3>Diskusi 1 menit di kelompok</h3><p>Menurut kalian, apakah virus selalu merugikan? Catat tebakan kelompok, kita buktikan lewat 4 misi.</p>'+nxt('Mulai Misi 1',2)}
+function v2(){
+var n=Object.keys(M.d).length,r='<h2>Misi 1: Virus sebagai pelaku</h2>'+turn('Cocokkan virus dengan penyakitnya. Benar +10.')+'<div class="cols"><div>';
+pairs.forEach(function(p,i){r+='<button class="opt'+(M.d[i]?' ok':'')+(M.l===i?' sel':'')+'" onclick="mc(0,'+i+')">'+p[0]+'</button>'});
+r+='</div><div>';
+ro.forEach(function(i){r+='<button class="opt'+(M.d[i]?' ok':'')+'" onclick="mc(1,'+i+')">'+pairs[i][1]+'</button>'});
+r+='</div></div><p class="mute" aria-live="polite">'+(M.m||'Pilih satu virus, lalu satu penyakit. Terpasang: '+n+' dari 6')+'</p>';
+if(n===6)r+='<div class="fb pop">Semua pasangan cocok. Virus hanya menyerang sel inang yang sesuai, dan antibiotik tidak bisa melawannya.</div>'+nxt('Lanjut ke Misi 2',3);
+return r}
+function mc(side,i){
+if(M.d[i])return;
+if(side===0){M.l=i;M.m=T[tn].n+', sekarang pilih penyakitnya.'}
+else if(M.l===null){M.m='Pilih virus dulu di kolom kiri.'}
+else if(M.l===i){M.d[i]=1;add(10);M.m=T[tn].n+' benar: '+pairs[i][0]+' menyebabkan '+pairs[i][1]+'. +10';M.l=null;rot()}
+else{M.m=T[tn].n+' belum tepat. Giliran berpindah.';M.l=null;rot()}
+render()}
+function v3(){
+var n=Object.keys(O).length,r='<h2>Misi 2: Virus sebagai pahlawan</h2>'+turn('Buka satu kotak misteri. +4 untuk tiap kotak.')+'<div class="grid">';
+H.forEach(function(h,i){var o=O[i];r+='<button class="hero'+(o?' open':'')+'" onclick="oh('+i+')" aria-expanded="'+!!o+'"><span style="font-size:1.6rem">'+h[0]+'</span><b>'+(o?h[1]:'Kotak misteri')+'</b><small>'+(o?h[2]+' '+h[3]:'Ketuk untuk membuka')+'</small></button>'});
+r+='</div><p class="mute">Terbuka: '+n+' dari 5</p>';
+if(n===5)r+='<div class="fb pop">Plot twist selesai. Apakah tebakan awal kelompok kalian berubah?</div>'+nxt('Lanjut ke Misi 3',4);
+return r}
+function oh(i){if(!O[i]){O[i]=1;add(4);rot()}render()}
+function v4(){
+var s=SC[C],cnt=CH.filter(function(x){return x!==null}).length,done=cnt===4;
+var r='<h2>Misi 3: Jadi kepala puskesmas</h2><p>Skenario '+(C+1)+' dari 2. Diskusikan di kelompok, lalu pilih saat giliranmu. Pilihan benar +15.</p><div class="card"><p style="margin:0">'+s.q+'</p></div>';
+if(!done)r+=turn('');
+s.o.forEach(function(o,i){var c='opt';if(done&&o[1])c+=' ok';r+='<button class="'+c+'"'+(done?' disabled':'')+' onclick="ch('+i+')">'+o[0]+(done?'<small>'+o[2]+'</small>':'')+'</button>'});
+if(!done)r+='<p class="mute">Sudah memilih: '+cnt+' dari 4 kelompok</p>';
+else{r+='<p>';CH.forEach(function(c,i){r+='<span class="chip" style="--c:var(--t'+i+')">'+T[i].n+(s.o[c][1]?' benar +15':' belum tepat')+'</span>'});r+='</p>';
+r+=C<1?'<p><button class="btn" onclick="C=1;CH=[null,null,null,null];render()">Lanjut ke skenario 2</button></p>':nxt('Lanjut ke Misi 4',5)}
+return r}
+function ch(i){if(CH[tn]!==null)return;CH[tn]=i;if(SC[C].o[i][1])add(15);rot();render()}
+function v5(){
+if(QI>=Q.length)return '<h2>Misi 4 selesai</h2><p>Semua soal sudah dijawab.</p>'+nxt('Lihat hasil',6);
+var q=Q[QI],r='<h2>Misi 4: Kuis ilmuwan</h2>'+turn('Soal '+(QI+1)+' dari '+Q.length+'. Benar +10.')+'<div class="card"><p style="margin:0">'+q[0]+'</p></div>';
+q[1].forEach(function(t,i){var c='opt';if(QP!==null){if(i===q[2])c+=' ok';else if(i===QP)c+=' bad'}r+='<button class="'+c+'"'+(QP!==null?' disabled':'')+' onclick="qa('+i+')">'+t+'</button>'});
+if(QP!==null)r+='<p><button class="btn" onclick="QI++;QP=null;rot();render()">'+(QI<Q.length-1?'Soal berikutnya':'Selesai')+'</button></p>';
+return r}
+function qa(i){if(QP!==null)return;QP=i;if(i===Q[QI][2])add(10);render()}
+function v6(){
+var o=T.map(function(t,i){return {n:t.n,s:t.s,i:i}}).sort(function(a,b){return b.s-a.s});
+var r='<h1>Kasus ditutup!</h1><p>Selamat kepada <b>'+o[0].n+'</b> sebagai kelompok detektif terbaik.</p>';
+o.forEach(function(t,k){r+='<div class="rank" style="--c:var(--t'+t.i+')"><b>'+(k+1)+'. '+t.n+'</b><span class="n">'+t.s+'</span></div>'});
+r+='<h3 style="margin-top:20px">Debat mini: Virus, kawan atau lawan?</h3><p>'+T[0].n+' dan '+T[2].n+' membela "virus adalah lawan". '+T[1].n+' dan '+T[3].n+' membela "virus adalah kawan". Siapkan 2 bukti dari misi tadi, lalu presentasikan 1 menit per kelompok.</p>';
+r+='<p>Kesimpulan: virus dapat menyebabkan penyakit, tetapi juga dimanfaatkan untuk vaksin, terapi gen, pengendalian hama, dan riset. Manfaat dan bahayanya bergantung pada cara manusia memahami dan memakainya.</p><p><button class="btn" onclick="reset();go(0)">Main lagi</button></p>';
+return r}
+function render(){$('app').innerHTML=(S>0?head():'')+[v0,v1,v2,v3,v4,v5,v6][S]()}
+render();
+</script>
+</body>
+</html>
